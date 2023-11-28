@@ -5,8 +5,7 @@ class MyHandler(SimpleHTTPRequestHandler):
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length).decode('utf-8')
-        print(post_data);
-        # Handle the received data
+     
         response_data = {'message': 'Received POST request', 'data': post_data}
         response_json = json.dumps(response_data).encode('utf-8')
 
